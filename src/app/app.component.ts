@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'to-do-list';
+  newName: string = '';
+  names: string[] = [];
+  
+  onSubmit() {
+    if (this.newName.trim() !== '') {
+      this.names.push(this.newName);
+      this.newName = '';
+    }
+  }
 }
