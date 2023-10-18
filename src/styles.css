@@ -4,3 +4,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+*{
+    font-family: 'Pixelify Sans', sans-serif;
+}
