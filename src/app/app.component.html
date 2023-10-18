@@ -1,18 +1,26 @@
 <div
-  class="w-full min-h-screen bg-gradient-to-t from-pink-200 to-pink-400 p-[10px]"
+  class="w-full min-h-screen bg-gradient-to-t from-[#bdf6e8] to-[#667bee] p-[10px]"
 >
   <div
     class="w-full max-w-[540px] bg-white mt-[100px] mx-auto mb-[20px] pt-[40px] px-[30px] pb-[70px] rounded-[10px]"
   >
     <form (submit)="onSubmit()">
-      <h1 class="bg-slate-400">To-Do List</h1>
+      <div class="flex justify-center mb-[20px]">
+        <img
+          class="h-[60px] mt-[6px] mr-[10px] "
+          src="../assets/love-always-wins (1).png"
+          alt="heart-icon"
+        />
+        <h1 class="text-[48px] ">To-Do List</h1>
+      </div>
+
       <div
         class="flex items-center justify-between bg-gray-200 rounded-[40px] pl-[20px] mb-[25px]"
       >
         <input
           class="border-none outline-none bg-transparent p-[10px]"
           type="text"
-          placeholder="Add your To-Do List"
+          placeholder="Add your List"
           id="todo"
           name="todo"
           [(ngModel)]="newTodo"
@@ -28,11 +36,19 @@
     </form>
 
     <ul>
-      <li *ngFor="let todo of todos" [class.checked]="todo.status === 'checked'" (click)=handleClick(todo)>
+      <li
+        *ngFor="let todo of todos"
+        [class.checked]="todo.status === 'checked'"
+        (click)="handleClick(todo)"
+      >
         {{ todo.todo }}
-        <button class="absolute top-[12px] right-[8px] w-[28px] h-[28px] rounded-[50%] bg-black text-white" (click)=handleDelete(todo)>x</button>
+        <button
+          class="absolute top-[12px] right-[8px] w-[28px] h-[28px] rounded-[50%] bg-black text-white"
+          (click)="handleDelete(todo)"
+        >
+          x
+        </button>
       </li>
     </ul>
-    
   </div>
 </div>
